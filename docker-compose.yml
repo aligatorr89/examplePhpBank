@@ -1,0 +1,22 @@
+version: "3"
+services:
+  php:
+    # image: php:7.2-cli
+    image: aligatorr89/example_php_bank-php_image
+    links:
+      - "mysql"
+    depends_on:
+      - mysql
+    volumes:
+      - /home/rok/Documents/examplePhpBank/:/usr/src/
+    working_dir: /usr/src/
+    command: ["php", "Bank.php"]
+  mysql:
+    image: mysql:latest
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=
+      - MYSQL_DATABASE=bank

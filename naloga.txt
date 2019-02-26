@@ -1,0 +1,37 @@
+Naloga:
+
+Spremljamo zelo poenostavljen model bančnih prilivov in odlivov. Za vsakega uporabnika se transakcije beležijo v tabeli transactions. Transakcija se lahko zabeleži kot
+priliv (deposit) ali odliv (withdraw) na določen dan. V enem dnevu ima lahko uporabnik več transakcij.
+
+struktura tabel:
+
+users:
+- id (pk)
+- name
+- birth_date
+
+transactions:
+- id (pk)
+- user_id
+- date
+- deposit
+- withdraw
+
+V PHPju pripravite objekt Bank, ki bo imel naslednje javne metode:
+
+	- Bank.randomize()
+		metoda napolni tabele z naključnimi podatki. Generira se 5 naključnih uporabnikov, ter 6 mesecev naključnih transakcij. Transakcije naj bodo od 1.1.2018 do 30.6.2018
+
+	-	Bank.balance()
+		metoda izpiše tabelaričen prikaz bilančnega stanja na računu vsakega uporabnika
+
+	-	Bank.transactions()
+		metoda izpiše tabelaričen prikaz mesečnih transakcij vseh uporabnikov
+
+	-	Bank.dailyTransactions(month)
+		metoda izpiše tabelaričen prikaz dnevnih transakcij vseh uporabnikov v podanem mescu
+
+	-	Bank.negativeBalance()
+		metoda izpiše tabelaričen prikaz dnevnih negativnih stanj vseh uporabnikov za celotno obdobje šestih mesecev
+
+Klici metod se bodo vršili preko konzole.
